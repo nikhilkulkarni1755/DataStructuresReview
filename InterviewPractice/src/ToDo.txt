@@ -1,0 +1,24 @@
+Interview Practice by Implementing the Following
+
+LinkedList
+
+Singly LinkedList (based on our implementation)
+Access -> O(n)
+Search -> O(n)
+Insert -> O(1)
+Delete -> O(1)
+
+Doubly LinkedList
+Access -> O(n)
+Search -> O(n)
+Insert -> O(1)
+Delete -> O(1)
+
+API -> Strings, Ints or any object
+
+LinkedList has to be general
+
+DONE
+LinkedList insertFront
+toDo
+finish inserts, LinkedList search, delete, size/length
