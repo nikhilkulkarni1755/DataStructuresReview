@@ -29,6 +29,7 @@ public class SLL<T> {
 	 * 
 	 */
 	
+	//hello world
 	//1 -> null
 	public SLL(Node<T> head) {
 		this.head = head;
@@ -74,7 +75,71 @@ public class SLL<T> {
 			System.out.print(current.getValue() + " -> ");
 			current = current.getNext();
 		}
+		
 		System.out.println("null");
+	}
+	/*
+	public boolean remove(Node<T> node) {
+		
+	}
+	*/
+	
+	//changes value of this.head
+	//1 -> 2 -> 3 -> null
+	//3 -> 2 -> 1 -> null
+	public void reverse() {
+		Node<T> current = this.head;
+		Node<T> result = null;
+		while(current != null) {
+			if(result == null) {
+				result = new Node<T>(current.getValue());
+				result.setNext(null);
+				System.out.println("here");
+				
+				//if null, sets the first node to be last by making it pt to null;
+			}
+			else {
+				//result != null, so 1 -> null
+				//now pts to 2 -> 
+				//make 2 -> 1 -> null
+				
+				//no changes to current. 
+				Node<T> temp = new Node<T>(current.getValue()); 
+				temp.setNext(result);
+				result = temp;
+				Node<T> prnt = result;
+				System.out.println("printing out the node");
+				while(prnt != null) {
+					System.out.print(prnt.getValue() + " -> ");
+					prnt = prnt.getNext();
+				}
+				System.out.println();
+			}
+			current = current.getNext();
+		}
+		
+		this.head = result;
+	}
+	
+	public boolean remove(T node) {
+		Node<T> current = this.head;
+		// 1 -> 2 -> 3 -> null
+		
+		while(current.getNext() != null) {
+			if(current.getNext().getValue() == node) {
+				//remove
+				Node<T> prev = current;
+				Node<T> next = current.getNext().getNext();
+				return true;
+				
+				//bridge
+			}
+			current = current.getNext();
+		}
+		
+		//check the last thing
+		
+		return false;
 	}
 	
 	//runner code
@@ -91,6 +156,10 @@ public class SLL<T> {
 		//ll.print();
 		ll.insertEnd(6);
 		ll.print(); //3 -> 1 -> 2 -> 6 -> 6 -> null
+		System.out.println("reversing");
+		ll.reverse();
+		System.out.println("done");
+		ll.print();
 		
 		// 1 -> 2 -> null
 
