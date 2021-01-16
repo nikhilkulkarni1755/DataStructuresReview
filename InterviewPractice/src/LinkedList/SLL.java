@@ -9,6 +9,8 @@ public class SLL<T> {
 	
 	private Node<T> tail;
 	
+	private int size;
+	
 	/*
 	 * Duplicates are allowed
 	 * 
@@ -19,6 +21,7 @@ public class SLL<T> {
 	public SLL(Node<T> head) {
 		this.head = head;
 		this.tail = null;
+		checkSize();
 	}
 	
 	public Node<T> getHead() {
@@ -29,7 +32,16 @@ public class SLL<T> {
 		this.head = head;
 	}
 	
-	
+	private void checkSize() {
+		this.size = 0;
+		Node<T> current = this.head;
+		while(current != null) {
+			size++;
+			current = current.getNext();
+		}
+		
+		
+	}
 	
 	//run once to find the tail
 	//O(n), n is the size of the LL
@@ -48,19 +60,19 @@ public class SLL<T> {
 		Node<T> node = new Node<T>(value);
 		node.setNext(head);
 		this.head = node;
+		size++;
 	}
 	
 	//O(n) 
 	public void insertEnd(T value) {
 		Node<T> node = new Node<T>(value);
 		
-		if(this.tail == null) {
-			setTail(); // go through the whole LL to find tail
-		}
+		setTail();
 		
 		this.tail.setNext(node);
 		//changing tail pointer is important. 
 		this.tail = node;
+		size++;
 	}
 	
 	public void print() {
@@ -172,51 +184,60 @@ public class SLL<T> {
 					Node<T> temp = current.getNext();
 					this.head = temp;
 				}
+				this.size--;
 				return true;
 			}
 			
 			prev = current;
 			current = current.getNext();
 		}
-		
+		size--;
 		//check the last thing
 		
 		return false;
 	}
 	
-	//runner code
-	public static void main(String [] args) {
-		Node<Integer> node = new Node<Integer>(1);
-		node.setNext(new Node<Integer>(2));
-		SLL<Integer> ll = new SLL<Integer>(node);
-		//ll.print();
-		ll.insertFront(3);
-		ll.insertEnd(6);
-		ll.insertEnd(6);
-		ll.print(); //3 -> 1 -> 2 -> 6 -> 6 -> null
-		ll.reverse();
-		ll.print();
-		
-		System.out.println("Remove -:> " + ll.remove(6));
-		ll.print();
-		System.out.println("Remove -:> " + ll.remove(3));
-		ll.print();
-		System.out.println("Reversing using rec");
-		ll.reverseRec();
-		ll.print();
-		System.out.println("null");
-		ll.head = null;
-		System.out.println("Remove -:> " + ll.remove(3));
-		ll.print();
-		
-		// 1 -> 2 -> null
-
-		//3
-		
-		//3 -> null
-		
-		//tail
-		
+	public boolean remove(T node, int index) {
+		int found = 1;
+		Node<T> current = this.head;
 		// 1 -> 2 -> 3 -> null
+		Node<T> prev = null;
+		while(current != null) {
+			if(current.getValue() == node && (found == index)) {
+				
+				if(prev != null) {
+					prev.setNext(current.getNext());
+				}
+				else {
+					//removing first node
+					//1 -> 2 -> 3 -> null
+					//2 -> 3 -> null
+					//1 -> null
+					Node<T> temp = current.getNext();
+					this.head = temp;
+				}
+				this.size--;
+				return true;
+			}
+			else if(current.getValue() == node){
+				found++;
+				prev = current;
+				current = current.getNext();
+			}
+			else { 
+				prev = current;
+				current = current.getNext();
+			}
+			
+			
+		}
+		size--;
+		//check the last thing
+		
+		return false;
+	}
+	
+	public int getSize() {
+		return this.size;
 	}
 }
