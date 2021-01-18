@@ -1,4 +1,4 @@
-package LinkedList;
+package Structures;
 
 import Node.Node;
 
@@ -235,6 +235,15 @@ public class SLL<T> {
 		//check the last thing
 		
 		return false;
+	}
+	
+	public boolean removeFront() {
+		if(this.head.getNext() == null) {
+			return false;
+		}
+		
+		this.head = this.head.getNext();
+		return true;
 	}
 	
 	public int getSize() {

@@ -22,3 +22,54 @@ DONE
 LinkedList insertFront
 toDo
 finish inserts, LinkedList search, delete, size/length
+
+Array, Stack, Queue, SLL, DLL, Skip List
+Hash Table, BSTs, Cartesian Tree, B-Tree, Red-Black Tree, Splay Tree
+AVL tree, KD tree
+
+Stack and Queue based on LLs or ArrayLists 
+
+I think I might use ArrayLists? 
+
+1
+2
+3
+4
+5
+
+push(9)
+
+9
+1
+2
+3
+4
+5
+
+pop()
+
+1
+2
+3
+4
+5
+
+pop()
+
+2
+3
+4
+5
+
+peek()
+
+2
+
+2
+3
+4
+5
+
+stack of plates
+
+sorting algos

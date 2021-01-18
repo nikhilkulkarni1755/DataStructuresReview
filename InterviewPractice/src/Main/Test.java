@@ -1,11 +1,12 @@
 package Main;
 
-import LinkedList.SLL;
 import Node.Node;
+import Structures.*;
 
 public class Test {
 
 	public static void main(String [] args) {
+		/*
 		Node<Integer> node = new Node<Integer>(1);
 		node.setNext(new Node<Integer>(2));
 		SLL<Integer> ll = new SLL<Integer>(node);
@@ -35,5 +36,25 @@ public class Test {
 		ll.print();
 		ll.remove(2);
 		ll.print();
+		ll.insertFront(3);
+		ll.print();
+		ll.removeFront();
+		ll.print();
+		*/
+		
+		//STACK TESTING
+		
+		Stack<Integer> stack = new Stack<Integer>(2);
+		
+		stack.print();
+		stack.push(3);
+		stack.print();
+		stack.push(3);
+		stack.print();
+		stack.push(4);
+		stack.print();
+		
+		stack.pop();
+		stack.print();
 	}
 }
