@@ -4,6 +4,15 @@ import Node.Node;
 
 public class SLL<T> {
 
+	/*
+	 * Singly Linked List Class
+	 * 
+	 * Data Structure is a flexible Data Structure, add or delete nodes of data as needed.
+	 * 
+	 * 
+	 * 
+	 */
+	
 	//pointer to a node
 	private Node<T> head;	
 	

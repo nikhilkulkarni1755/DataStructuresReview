@@ -46,15 +46,20 @@ public class Test {
 		
 		Stack<Integer> stack = new Stack<Integer>(2);
 		
-		stack.print();
 		stack.push(3);
+		stack.print();
+		
+
+		stack.peek();
 		stack.print();
 		stack.push(3);
 		stack.print();
 		stack.push(4);
 		stack.print();
+		stack.peek();
 		
 		stack.pop();
 		stack.print();
+		stack.peek();
 	}
 }
