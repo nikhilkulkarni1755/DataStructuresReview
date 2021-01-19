@@ -1,12 +1,14 @@
 package Main;
 
-import Node.Node;
 import Structures.*;
+import Node.*;
 
 public class Test {
 
 	public static void main(String [] args) {
-		/*
+		
+		//Singly Linked List Testing
+		
 		Node<Integer> node = new Node<Integer>(1);
 		node.setNext(new Node<Integer>(2));
 		SLL<Integer> ll = new SLL<Integer>(node);
@@ -40,11 +42,16 @@ public class Test {
 		ll.print();
 		ll.removeFront();
 		ll.print();
-		*/
+		ll.removeFront();
+		ll.print();
+		ll.removeFront();
+		ll.print();
+
 		
 		//STACK TESTING
 		
-		Stack<Integer> stack = new Stack<Integer>(2);
+/*
+ * 		Stack<Integer> stack = new Stack<Integer>(2);
 		
 		stack.push(3);
 		stack.print();
@@ -61,5 +68,21 @@ public class Test {
 		stack.pop();
 		stack.print();
 		stack.peek();
+ */
+		 
+		Stack<String> stack = new Stack<String>("a");
+		stack.push("b");
+		
+		stack.push("c");
+		stack.print();
+//		System.out.println(stack.getSize());
+		stack.pop();
+		stack.print();
+		stack.peek();
+//		System.out.println(stack.getSize());
+		System.out.println(stack.pop());
+		stack.print();
+		System.out.println(stack.pop());
+		stack.print();
 	}
 }

@@ -5,10 +5,10 @@ import Node.Node;
 public class Stack<T> {
 
 	private SLL<T> stack;
-//	private Node<T> head;
+	//private Node<T> head;
 	//idk if we need ptr var, but we shall see
 	//private Node<T> ptr;
-	private int size;
+	//private int size;
 	
 	//no need for getters or setters here. 
 	
@@ -16,24 +16,24 @@ public class Stack<T> {
 //		this.head = new Node<T>(data);
 		Node<T> node = new Node<T>(data);
 		this.stack = new SLL<T>(node);
-		size = 1;
+		//size = 1;
 	}
 	
 	public int getSize() {
-		return this.size;
+		return this.stack.getSize();
 	}
 	
 	public void push(T data) {
 		stack.insertFront(data);
 		//this.head = 
-		size++;
+		//size++;
 	}
 	
 	public boolean pop() {
 		//stack.remove(node);
 		
 		//remove the front of the sll
-		size--;
+		//size--;
 		return stack.removeFront();
 		
 	}

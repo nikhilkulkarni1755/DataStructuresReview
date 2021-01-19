@@ -86,7 +86,7 @@ public class SLL<T> {
 	
 	public void print() {
 		Node<T> current = head;
-		
+		System.out.print("-> ");
 		while(current != null) {
 			System.out.print(current.getValue() + " -> ");
 			current = current.getNext();
@@ -200,7 +200,7 @@ public class SLL<T> {
 			prev = current;
 			current = current.getNext();
 		}
-		size--;
+		this.size--;
 		//check the last thing
 		
 		return false;
@@ -240,19 +240,22 @@ public class SLL<T> {
 			
 			
 		}
-		size--;
+		this.size--;
 		//check the last thing
 		
 		return false;
 	}
 	
 	public boolean removeFront() {
-		if(this.head.getNext() == null) {
+		
+		this.size--;
+		this.head = this.head.getNext();
+		
+		if(this.head == null) {
 			return false;
 		}
-		
-		this.head = this.head.getNext();
 		return true;
+		
 	}
 	
 	public int getSize() {
