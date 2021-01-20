@@ -13,6 +13,7 @@ public class Queue<T> {
 		size = 1;
 	}
 	
+
 	public int getSize() {
 		return this.size;
 	}
