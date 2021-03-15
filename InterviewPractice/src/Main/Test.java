@@ -84,5 +84,8 @@ public class Test {
 		stack.print();
 		System.out.println(stack.pop());
 		stack.print();
+		
+		HashTable h = new HashTable();
+		System.out.println(h.getHash());
 	}
 }
